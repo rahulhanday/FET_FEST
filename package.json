@@ -3,9 +3,10 @@
     "version": "1.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve",
-        "build": "ng build",
-        "test": "ng test",
+        "serve": "ng lint && ng serve",
+        "start": "ng lint && ng serve",
+        "build": "ng lint && ng build",
+        "test": "ng lint && ng test",
         "lint": "ng lint",
         "e2e": "ng e2e"
     },
@@ -26,8 +27,12 @@
         "@ng-bootstrap/ng-bootstrap": "4.0.0",
         "@ngx-translate/core": "11.0.1",
         "@ngx-translate/http-loader": "4.0.0",
+        "@types/chart.js": "^2.7.53",
         "bootstrap": "4.0.0",
+        "chart.js": "2.8.0",
         "core-js": "2.5.4",
+        "font-awesome": "4.7.0",
+        "readme": "^0.7.0",
         "rxjs": "6.3.3",
         "tslib": "1.9.0",
         "zone.js": "0.8.26"
