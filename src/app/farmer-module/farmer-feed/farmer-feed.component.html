@@ -7,7 +7,7 @@
       'label_select_city' | translate
     }}</label>
         <div class="col padding-left-10 dropdown">
-            <button class="btn btn-primary col-12 dropdown-toggle" type="button" id="dropdownMenuButton"
+            <button class="btn btn-primary common-btn col-12 dropdown-toggle" type="button" id="dropdownMenuButton"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{ farmerModel | translate }}
             </button>
@@ -19,13 +19,13 @@
         </div>
     </div>
     <hr />
-    <div class="form-group">
+    <div class="form-group" *ngIf="farmerModel !== 'label_select_city'">
         <form #feedForm="ngForm">
             <div class="col padding-0 row form-group">
-                <div class="col-12">
+                <div class="col-8">
                     <div class="dropdown form-group">
-                        <button class="btn btn-primary dropdown-toggle col-12" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-primary common-btn dropdown-toggle col-12" type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ vegModel.labelKey | translate }}
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -41,7 +41,7 @@
                             #quantityN="ngModel" required />
                     </div>
                 </div>
-                <div class="col-12 my-2">
+                <div class="col-4 my-2">
                     <img *ngIf="vegModel.image" class="rounded" [src]="vegModel.image" width="133px" />
                 </div>
             </div>
@@ -60,7 +60,7 @@
 
                 <div class="col float-right">
                     <button type="submit" [disabled]="!feedForm.form.valid || vegModel.id == null"
-                        class="btn btn-primary common-btn col float-right " (click)="addVegetable()">
+                        class="btn btn-primary common-btn common-btn col float-right " (click)="addVegetable()">
                         {{ 'label_add' | translate }}
                     </button>
                 </div>
@@ -84,7 +84,7 @@
                     <td>{{ veg.price }}</td>
                     <td>{{ veg.quantity }}</td>
                     <td>
-                        <button (click)="removeItem(i)" class="btn btn-primary">
+                        <button (click)="removeItem(i)" class="btn btn-primary common-btn">
                             {{ 'label_remove' | translate }}
                         </button>
                     </td>
@@ -94,7 +94,7 @@
     </div>
 </div>
 <div class="col form-group proceed">
-    <button [routerLink]="['/farmer/confirmation']" class="btn btn-primary col-12"
+    <button [routerLink]="['/farmer/confirmation']" class="btn btn-primary common-btn col-12"
         [disabled]="addedVeg.length == 0 || farmerModel == 'label_select_city'">
         {{ 'label_proceed_to_sell' | translate }}
     </button>
