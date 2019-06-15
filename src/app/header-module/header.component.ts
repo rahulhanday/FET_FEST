@@ -3,6 +3,8 @@ import { LanguageService } from '../shared-module/services/language.service';
 import { LANGUAGE_CODES_ENUM } from '../shared-module/shared.constant';
 import { ContextService } from '../shared-module/services/context.service';
 import { IContext } from '../shared-module/shared.model';
+import { SharedDataService } from '../shared-module/services/shared-data.service';
+import { CONTEXT_TYPES_ENUM } from '../app.constant';
 
 @Component({
     selector: 'header-component',
@@ -14,10 +16,15 @@ export class HeaderComponent {
     currentLanguage: string;
     languageCodes: any;
     context: IContext;
-    constructor(private languageService: LanguageService, private contextService: ContextService) {
+    cartItemsCount: number;
+    contextTypes: any;
+    constructor(private languageService: LanguageService,
+        private contextService: ContextService,
+        private sharedDataService: SharedDataService) {
         this.currentLanguage = this.languageService.getLanguage();
         this.languageCodes = LANGUAGE_CODES_ENUM;
         this.context = this.contextService.getContext();
+        this.contextTypes = CONTEXT_TYPES_ENUM;
         this.init();
     }
     changeLanguage(languageCode: string) {
@@ -28,6 +35,10 @@ export class HeaderComponent {
     private init() {
         this.contextService.onContextChange().subscribe((context) => {
             this.context = context;
+        });
+
+        this.sharedDataService.getCartItemsLength().subscribe((count) => {
+            this.cartItemsCount = count;
         });
     }
 }
