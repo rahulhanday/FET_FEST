@@ -1,0 +1,68 @@
+
+@import '../../assets/scss/veriables.scss';
+
+.site-header {
+    background-color: $header-btn-bg;
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+ .login-details{
+    &-icon {
+        width: 34px;
+        margin: 7px 0px;
+        display: inline-block;
+        font-size: 30px;
+        color: $footer-btn-bg-hover ;
+    }
+
+    &-name {
+        color:$white;
+        margin: 18px 10px 0 0px;
+        float: left;
+    }
+ }
+ .dropdown-toggle{
+     &::after{
+        position: absolute;
+        right: 12px;
+        top: 18px;
+    }
+ }
+ .header-language-dropdown {
+    .languageDropdown {
+        background-color: $white;
+        color:$text-color;
+        border-color: $footer-btn-bg;
+        border-color: #66191c;
+        width: 90px;
+        text-align: left;
+        &.btn-outline-primary:not(:disabled):not(.disabled).active:focus, 
+        &.btn-outline-primary:not(:disabled):not(.disabled):active:focus, 
+        .show>.btn-outline-primary.dropdown-toggle:focus ,
+        &.btn-outline-primary:not(:disabled):not(.disabled).active, 
+        &.btn-outline-primary:not(:disabled):not(.disabled):active, 
+        .show>.btn-outline-primary.dropdown-toggle{
+            box-shadow: 0 0 0 0;
+            background-color: $white;
+            color:$text-color;
+            border-color: $footer-btn-bg;
+            border-color: #66191c;
+        }
+    }
+
+    
+ }
+
+ .header-language-dropdown  {
+    float: left;
+    top: 13px;
+    .dropdown-menu {
+        padding: 0;
+    }
+}
+ .dropdown-menu.show div{
+     padding: 10px;
+     &:first-child {
+        border-bottom: 1px solid #aba7a7;
+    }
+ }
