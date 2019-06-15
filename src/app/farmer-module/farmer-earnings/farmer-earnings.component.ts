@@ -9,6 +9,9 @@ export class FarmerEarningsComponent implements OnInit, OnDestroy {
     private subscription$: Subscription;
     constructor(private farmerEarningService: FarmerEarningService) { }
 
+    /**
+     * On Init Method to get farmer's earnings
+     */
     ngOnInit() {
         setTimeout(() => {
             this.subscription$ = this.farmerEarningService.getEarings().subscribe((earnings) => {
@@ -24,6 +27,9 @@ export class FarmerEarningsComponent implements OnInit, OnDestroy {
         }, 1500);
     }
 
+    /**
+     * Unsubscribe observables on component destroy
+     */
     ngOnDestroy() {
         if (this.subscription$) {
             this.subscription$.unsubscribe();
