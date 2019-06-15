@@ -5,10 +5,11 @@
                 <img class="w-100" title="Safal Kisaan" src="assets/images/logo.png">
             </a>
         </div>
+        <label class="login-details-name" *ngIf="context">{{context.name}}
+        </label>
         <div class="float-right login-details">
-            <label class="login-details-name" *ngIf="context">{{context.name}}
-            </label>
-            <div ngbDropdown class="d-inline-block header-language-dropdown">
+
+            <div ngbDropdown class="d-inline-block header-language-dropdown" style="    margin-top: 10px;">
                 <button class="btn btn-outline-primary languageDropdown" id="languageDropdown" ngbDropdownToggle>
                     <div *ngIf="languageCodes.english === currentLanguage; else hindiLanguageTemplate">
                         {{'label_english_language'| translate}}
@@ -28,15 +29,15 @@
             <div class="header-cart" *ngIf="context && context.type === contextTypes.user">
                 {{ cartItemsCount }}
             </div>
-            <a class="pr-1 ml-2 login-details-icon" href="#">
-                <i class="fa fa-sign-in"></i>
-            </a>
+            <div class="header-actions" *ngIf="context">
+                <img src="../../assets/images/gender-neutral-user.png" (click)="isOpen = !isOpen">
+                <div *ngIf="isOpen" class="action-content">
+                    <div *ngIf="context.type === contextTypes.farmer" (click)="farmerEarning(); isOpen = false;">
+                        {{'label_earning' | translate }}</div>
+                    <div (click)="logoutUser(); isOpen = false;">{{'label_logout' | translate}}</div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="header-actions" *ngIf="context">
-        <div (click)="isOpen = !isOpen">Action</div>
-        <div *ngIf="isOpen">
-            <div (click)="logoutUser(); isOpen = false;">Logout</div>
-        </div>
-    </div>
+
 </nav>
