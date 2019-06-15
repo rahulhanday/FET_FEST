@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
-import { IContext } from '../common.model';
+import { IContext } from '../shared.model';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class ContextService {
     private currentContext: IContext;
+    private context$ = new Subject<IContext>();
     constructor() { }
 
     getContext(): IContext {
@@ -12,5 +14,10 @@ export class ContextService {
 
     setContext(value: IContext): void {
         this.currentContext = value;
+        this.context$.next(value);
+    }
+
+    onContextChange() {
+        return this.context$.asObservable();
     }
 }

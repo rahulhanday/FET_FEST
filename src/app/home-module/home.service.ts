@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpService } from '../common-module/services/http.service';
+import { HttpService } from '../shared-module/services/http.service';
 import { CONTEXT_TYPES_ENUM } from '../app.constant';
 import { map } from 'rxjs/operators';
-import { ContextService } from '../common-module/services/context.service';
-import { IFarmerModel, IUserModel } from '../common-module/common.model';
+import { ContextService } from '../shared-module/services/context.service';
+import { IFarmerModel, IUserModel } from '../shared-module/shared.model';
 import { Observable } from 'rxjs';
 
 @Injectable()

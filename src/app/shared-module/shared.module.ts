@@ -15,4 +15,4 @@ import { SharedDataService } from './services/shared-data.service';
     ],
     exports: []
 })
-export class CommonModule { }
+export class SharedModule { }

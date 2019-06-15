@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-root',
@@ -7,8 +6,5 @@ import { TranslateService } from '@ngx-translate/core';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    constructor(private translateService: TranslateService) {
-        this.translateService.setDefaultLang('hi-IN');
-        this.translateService.use('hi-IN');
-    }
+    constructor() { }
 }
