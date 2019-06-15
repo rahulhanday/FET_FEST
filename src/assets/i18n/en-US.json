@@ -39,5 +39,8 @@
     "label_sell_products": "Sell Products",
     "label_earning": "My Earnings",
     "label_reuqests": "My Requests",
-    "label_kisaan": "Kisaan"
+    "label_kisaan": "Kisaan",
+    "label_user": "User",
+    "label_english_language": "English",
+    "label_hindi_language": "Hindi"
 }
