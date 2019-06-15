@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { IProduct } from './user.model';
+import { SharedDataService } from '../shared-module/services/shared-data.service';
 
 @Injectable()
 export class UserDataService {
     userCartList: IProduct[];
-    constructor() {
+    constructor(private sharedDataService: SharedDataService) {
         this.userCartList = [];
     }
     /**
@@ -18,6 +19,7 @@ export class UserDataService {
         } else {
             this.userCartList.push(JSON.parse(JSON.stringify(product)));
         }
+        this.sharedDataService.setCartItemsLength(this.userCartList.length);
     }
 
     /**
@@ -32,5 +34,14 @@ export class UserDataService {
             }
         }
         return ind;
+    }
+
+    removeItemFromCart(id: string) {
+        const index = this.userCartList.findIndex((item) => item.id === id);
+        if (index !== -1) {
+            this.userCartList.splice(index, 1);
+        }
+        this.sharedDataService.setCartItemsLength(this.userCartList.length);
+        return this.userCartList;
     }
 }
