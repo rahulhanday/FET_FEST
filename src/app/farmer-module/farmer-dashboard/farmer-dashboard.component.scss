@@ -1,5 +1,12 @@
 .btn-container {
-    display: flex;
-    padding: 20px 0;
-    justify-content: center;
+  display: flex;
+  padding: 20px 0;
+  justify-content: center;
+}
+
+.main {
+  top: 20%;
+  position: absolute;
+  left: 10%;
+  width: 80%;
 }

@@ -1,0 +1,16 @@
+.confirmation-holder {
+  width: 80%;
+  border: 2px solid #bd2130;
+  padding: 0;
+  text-align: center;
+  left: 10%;
+  position: absolute;
+  top: 20%;
+  box-sizing: border-box;
+  .confirmation-header {
+    margin-bottom: 40px;
+    background: #167dd8;
+    padding: 5px 0 10px 0;
+    color: white;
+  }
+}
