@@ -7,7 +7,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './header-module/header.module';
-import { DateStripModule } from './common-module/dateStrip/date-strip.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared-module/shared.module';
 
@@ -30,8 +29,7 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    HeaderModule,
-    DateStripModule
+    HeaderModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
