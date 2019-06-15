@@ -10,6 +10,7 @@
   "label_add": "Add",
   "label_place_order": "Place Order",
   "label_select_vegetable": "Select Vegetable",
+  "label_select_city": "Select City",
   "label_vegetable": "Vegetable",
   "label_quantity": "Quantity",
   "label_price_kg": "Price/kg",
@@ -33,6 +34,7 @@
   "label_mrp": "MRP",
   "label_total": "Total",
   "label_proceed": "Proceed",
+  "label_proceed_to_sell": "Proceed to sell",
   "label_accept": "Accept",
   "label_reject": "Reject",
   "label_pending": "Pending",
@@ -43,5 +45,9 @@
   "label_kisaan": "Kisaan",
   "label_user": "User",
   "label_english_language": "English",
-  "label_hindi_language": "Hindi"
+  "label_hindi_language": "Hindi",
+  "label_Pune": "Pune",
+  "label_Nanded": "Nanded",
+  "label_Mumbai": "Mumbai",
+  "label_Nagpur": "Nagpur"
 }

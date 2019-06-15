@@ -1,12 +1,7 @@
 {
-    "username": "kkmat@gmail.com",
-    "displayName": "Kishor Kamat",
-    "city": "Pune",
-    "location": "Baner",
-    "cityToSell": [
-        "Pune",
-        "Nanded",
-        "Mumbai",
-        "Nagpur"
-    ]
+  "username": "kkmat@gmail.com",
+  "displayName": "Kishor Kamat",
+  "city": "Pune",
+  "location": "Baner",
+  "cityToSell": ["label_Pune", "label_Nanded", "label_Mumbai", "label_Nagpur"]
 }

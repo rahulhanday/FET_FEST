@@ -38,6 +38,7 @@ export class FarmerFeedComponent implements OnInit {
       null,
       true
     );
+    this.farmerModel = 'label_select_city';
     this.addedVeg = [];
   }
 
@@ -55,9 +56,6 @@ export class FarmerFeedComponent implements OnInit {
       });
 
     this.farmerCity = this.farmerFeedService.getCity();
-    if (this.farmerCity) {
-      this.farmerModel = this.farmerCity.cityToSell[0];
-    }
   }
 
   /**
