@@ -1,0 +1,47 @@
+@import "../../../assets/scss/veriables.scss";
+
+.request-container {
+    padding: 0 10px;
+
+    .order-container {
+        margin: 18px 0;
+
+        .order-content {
+            hr {
+                margin: 8px;
+            }
+        }
+    }
+
+    .order-list {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    .status-button-container {
+        display: flex;
+    }
+
+    .status-label {
+        padding: 0 10px;
+        font-weight: 500;
+    }
+
+    .status-btn {
+        padding: 0 8px;
+        margin: 0 10px;
+    }
+
+    .accepted {
+        color: green;
+    }
+
+    .pending {
+        color: orange;
+    }
+
+    .rejected {
+        color: red;
+    }
+}

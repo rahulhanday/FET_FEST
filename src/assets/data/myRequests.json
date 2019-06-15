@@ -3,7 +3,7 @@
         "orderId": "01",
         "date": "22 June 19",
         "location": "kalyani nagar",
-        "status": 0,
+        "status": 1,
         "orderItems": [
             {
                 "id": "p2",
@@ -36,6 +36,38 @@
         "date": "29 June 19",
         "location": "viman nagar",
         "status": 0,
+        "orderItems": [
+            {
+                "id": "p2",
+                "quantity": 100,
+                "label": "Tomato",
+                "labelKey": "label_tomato",
+                "type": "1",
+                "price": 27
+            },
+            {
+                "id": "p2",
+                "quantity": 20,
+                "label": "Potato",
+                "labelKey": "label_potato",
+                "type": "1",
+                "price": 18
+            },
+            {
+                "id": "p4",
+                "quantity": 50,
+                "label": "Mango - Alphanso",
+                "labelKey": "label_mango_alphanso",
+                "type": "2",
+                "price": 145
+            }
+        ]
+    },
+    {
+        "orderId": "02",
+        "date": "29 June 19",
+        "location": "viman nagar",
+        "status": 2,
         "orderItems": [
             {
                 "id": "p2",
