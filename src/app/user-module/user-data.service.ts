@@ -33,4 +33,12 @@ export class UserDataService {
         }
         return ind;
     }
+
+    removeItemFromCart(id: string) {
+        const index = this.userCartList.findIndex((item) => item.id === id);
+        if (index !== -1) {
+            this.userCartList.splice(index, 1);
+        }
+        return this.userCartList;
+    }
 }
