@@ -19,7 +19,7 @@
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <ng-container *ngFor="let city of farmerCity?.cityToSell">
-          <a (click)="farmerModel = city" class="dropdown-item">{{ city }}</a>
+          <a (click)="farmerModel = city" class="dropdown-item">{{ city | translate }}</a>
         </ng-container>
       </div>
     </div>
@@ -129,7 +129,7 @@
   <button
     [routerLink]="['/farmer/confirmation']"
     class="btn btn-primary col-12"
-    [disabled]="addedVeg.length == 0"
+    [disabled]="addedVeg.length == 0 || farmerModel == 'label_select_city'"
   >
     {{ 'label_proceed_to_sell' | translate }}
   </button>
