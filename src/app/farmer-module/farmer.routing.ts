@@ -4,6 +4,7 @@ import { FarmerDashboardComponent } from './farmer-dashboard/farmer-dashboard.co
 import { FarmerFeedComponent } from './farmer-feed/farmer-feed.component';
 import { FarmerRequestComponent } from './farmer-request/farmer-request.component';
 import { FarmerConfirmationComponent } from './farmer-confirmation/farmer-confirmation.component';
+import { FarmerEarningsComponent } from './farmer-earnings/farmer-earnings.component';
 
 const routes: Routes = [
   { path: '', component: FarmerDashboardComponent, pathMatch: 'full' },
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'confirmation',
     component: FarmerConfirmationComponent
+  },
+  {
+    path: 'earnings',
+    component: FarmerEarningsComponent
   }
 ];
 

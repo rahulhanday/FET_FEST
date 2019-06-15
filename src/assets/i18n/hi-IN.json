@@ -50,5 +50,11 @@
   "label_Pune": "पुणे",
   "label_Nanded": "नांदेड़",
   "label_Mumbai": "मुंबई",
-  "label_Nagpur": "नागपुर"
+  "label_Nagpur": "नागपुर",
+  "user_quantity_error": "कृपया मात्रा दर्ज करें",
+  "label_proceed_error": "कृपया उत्पादों को जोड़ें",
+  "label_no_records": "कोई रिकॉर्ड नहीं",
+  "label_payment_options": "भुगतान विकल्प",
+  "label_cod": "डिलवरी पर नकदी",
+  "label_product": "उत्पाद"
 }

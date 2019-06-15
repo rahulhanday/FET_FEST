@@ -1,0 +1,12 @@
+.date-strip-container {
+    width: 100%;
+    height: 60px;
+    display: flex;
+
+    .date-container {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 25%;
+    }
+}

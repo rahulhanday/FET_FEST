@@ -19,12 +19,12 @@
     },
     {
         "id": "p3",
-        "label": "Onion",
-        "labelKey": "label_onion",
+        "label": "Cabbage",
+        "labelKey": "label_cabbage",
         "type": 1,
         "price": 20,
         "marketPrice": 30,
-        "image": "../../assets/images/onion.jpg"
+        "image": "../../assets/images/cabbage.jpg"
     },
     {
         "id": "p4",
@@ -33,7 +33,7 @@
         "type": 2,
         "price": 105,
         "marketPrice": 140,
-        "image": "../../assets/images/apple.jpg"
+        "image": "../../assets/images/apples.jpg"
     },
     {
         "id": "p4",
@@ -42,6 +42,6 @@
         "type": 2,
         "price": 145,
         "marketPrice": 180,
-        "image": "../../assets/images/mango.jpg"
+        "image": "../../assets/images/mangoes.jpg"
     }
 ]
