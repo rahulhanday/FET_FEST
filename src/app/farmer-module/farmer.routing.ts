@@ -12,7 +12,11 @@ const routes: Routes = [
   {
     path: 'confirmation',
     component: FarmerConfirmationComponent
-  }
+  },
+  /* {
+    path: 'earnings',
+    component: FarmerConfirmationComponent
+  } */
 ];
 
 @NgModule({
