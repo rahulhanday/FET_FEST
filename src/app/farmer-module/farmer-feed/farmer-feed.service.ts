@@ -1,13 +1,21 @@
 import { Injectable } from '@angular/core';
-import { getInheritedFactory } from '@angular/core/src/render3';
-
-@Injectable({
-  providedIn: 'root'
-})
+import { Observable } from 'rxjs';
+import { HttpService } from './../../shared-module/services/http.service';
+import { IVegetables } from './farmer-feed.data';
+import { IContext } from '../../shared-module/shared.model';
+import { ContextService } from 'src/app/shared-module/services/context.service';
+@Injectable()
 export class FarmerFeedService {
-  constructor() {}
+  constructor(
+    private httpService: HttpService,
+    private context: ContextService
+  ) {}
 
-  getVegetables() {}
+  getVegetables() {
+    return this.httpService.get('marketProductPrice.json');
+  }
 
-  getCity() {}
+  getCity(): IContext {
+    return this.context.getContext();
+  }
 }

@@ -11,6 +11,7 @@ import { FarmerFeedService } from './farmer-feed.service';
   selector: 'app-farmer-feed',
   templateUrl: './farmer-feed.component.html',
   styleUrls: ['./farmer-feed.component.scss'],
+  providers: [FarmerFeedService],
   encapsulation: ViewEncapsulation.None
 })
 export class FarmerFeedComponent implements OnInit {
@@ -41,54 +42,11 @@ export class FarmerFeedComponent implements OnInit {
    * on init
    */
   ngOnInit() {
-    // this.farmerFeedService.getVegetables()
-    this.vegetables = [
-      {
-        id: 'p1',
-        label: 'Tomato',
-        labelKey: 'label_tomato',
-        type: 1,
-        price: 27,
-        marketPrice: 35,
-        image: '../../assets/images/tomato.jpg'
-      },
-      {
-        id: 'p2',
-        label: 'Potato',
-        labelKey: 'label_potato',
-        type: 1,
-        price: 18,
-        marketPrice: 23,
-        image: '../../assets/images/potato.jpg'
-      },
-      {
-        id: 'p3',
-        label: 'Onion',
-        labelKey: 'label_onion',
-        type: 1,
-        price: 20,
-        marketPrice: 30,
-        image: '../../assets/images/onion.jpg'
-      },
-      {
-        id: 'p4',
-        label: 'Apple',
-        labelKey: 'label_apple',
-        type: 2,
-        price: 105,
-        marketPrice: 140,
-        image: '../../assets/images/apple.jpg'
-      },
-      {
-        id: 'p4',
-        label: 'Mango - Alphanso',
-        labelKey: 'label_mango_alphanso',
-        type: 2,
-        price: 145,
-        marketPrice: 180,
-        image: '../../assets/images/mango.jpg'
-      }
-    ];
+    this.farmerFeedService
+      .getVegetables()
+      .subscribe((data: Array<IVegetables>) => {
+        this.vegetables = data;
+      });
   }
 
   /**
