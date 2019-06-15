@@ -1,14 +1,14 @@
-<div class="date-strip-container">
-    <div class="date-container" (click)="handleDateClick($event, saturdays[0])">
+<div class="row date-strip">
+    <div class="p-2 bg-column col-3 text-center" (click)="handleDateClick($event, saturdays[0])">
         {{ transformDate(saturdays[0]) }}
     </div>
-    <div class="date-container" (click)="handleDateClick($event, saturdays[1])">
+    <div class="p-2 bg-column col-3 text-center" (click)="handleDateClick($event, saturdays[1])">
         {{ transformDate(saturdays[1]) }}
     </div>
-    <div class="date-container" (click)="handleDateClick($event, saturdays[2])">
+    <div class="p-2 bg-column col-3 text-center" (click)="handleDateClick($event, saturdays[2])">
         {{ transformDate(saturdays[2]) }}
     </div>
-    <div class="date-container" (click)="handleDateClick($event, saturdays[3])">
+    <div class="p-2 bg-column col-3 text-center" (click)="handleDateClick($event, saturdays[3])">
         {{ transformDate(saturdays[3]) }}
     </div>
 </div>

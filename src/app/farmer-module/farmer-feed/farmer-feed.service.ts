@@ -11,10 +11,17 @@ export class FarmerFeedService {
     private context: ContextService
   ) {}
 
+  /**
+   * Gets vegetables
+   */
   getVegetables() {
     return this.httpService.get('marketProductPrice.json');
   }
 
+  /**
+   * Gets city
+   * @returns city
+   */
   getCity(): IContext {
     return this.context.getContext();
   }
