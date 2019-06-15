@@ -6,6 +6,7 @@
     "label_onion": "प्याज",
     "label_cabbages": "पत्तागोभी",
     "label_mango": "आम",
+    "label_cabbage": "गोभी",
     "label_banana": "केला",
     "label_add": "जोडें",
     "label_submit": "जमा करें",
@@ -40,5 +41,6 @@
     "label_sell_products": "उत्पाद बेचो",
     "label_earning": "मेरी कमाई",
     "label_reuqests": "मेरे निवेदन",
-    "label_kisaan": "किसान"
+    "label_kisaan": "किसान",
+    "user_quantity_error": "कृपया मात्रा दर्ज करें"
 }

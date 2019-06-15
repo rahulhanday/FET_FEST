@@ -5,6 +5,7 @@ import { UserProductModule } from './user-product/user-product.module';
 import { UserSummaryModule } from './user-summary/user-summary.module';
 import { UserDataService } from './user-data.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { CommonModule } from '../common-module/common.module';
 
 @NgModule({
     declarations: [
@@ -12,6 +13,7 @@ import { TranslateModule } from '@ngx-translate/core';
     ],
     imports: [
         TranslateModule,
+        CommonModule,
         UserProductModule,
         UserSummaryModule,
         userRouting
