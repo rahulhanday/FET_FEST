@@ -1,8 +1,12 @@
-[
-    {
-        "username": "kkmat@gmail.com",
-        "displayName": "Kishor Kamat",
-        "city": "Pune",
-        "role": 1
-    }
-]
+{
+    "username": "kkmat@gmail.com",
+    "displayName": "Kishor Kamat",
+    "city": "Pune",
+    "location": "Baner",
+    "cityToSell": [
+        "Pune",
+        "Nanded",
+        "Mumbai",
+        "Nagpur"
+    ]
+}
