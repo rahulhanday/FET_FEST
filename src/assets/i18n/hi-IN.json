@@ -45,5 +45,7 @@
   "label_user": "उपयोगकर्ता",
   "label_english_language": "अंग्रेज़ी",
   "label_hindi_language": "हिंदी",
-  "user_quantity_error": "कृपया मात्रा दर्ज करें"
+  "user_quantity_error": "कृपया मात्रा दर्ज करें",
+  "label_proceed_error":"कृपया उत्पादों को जोड़ें
+  "
 }

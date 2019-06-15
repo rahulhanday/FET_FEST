@@ -44,5 +44,6 @@
   "label_user": "User",
   "label_english_language": "English",
   "label_hindi_language": "Hindi",
-  "user_quantity_error":"Please enter quantity"
+  "user_quantity_error":"Please enter quantity",
+  "label_proceed_error":"Please add products"
 }
