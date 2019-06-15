@@ -56,11 +56,11 @@ export class UserProductComponent implements OnInit {
         for (let i = 0; i < this.userDataService.userCartList.length; i++) {
             tAmount += parseInt(this.userDataService.userCartList[i].quantity, 10) *
                 this.userDataService.userCartList[i].price;
-            sAmount = parseInt(this.userDataService.userCartList[i].quantity, 10) *
+            sAmount += parseInt(this.userDataService.userCartList[i].quantity, 10) *
                 this.userDataService.userCartList[i].marketPrice;
         }
         this.totalAmount = tAmount;
-        this.savedAmount = sAmount - tAmount;
+        this.savedAmount = sAmount - this.totalAmount;
     }
 
     /**
