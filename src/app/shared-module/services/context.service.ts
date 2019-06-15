@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { IContext } from '../shared.model';
 import { Subject } from 'rxjs';
 
-@Injectable()
+@Injectable({
+    'providedIn': 'root'
+})
 export class ContextService {
     private currentContext: IContext;
     private context$ = new Subject<IContext>();
