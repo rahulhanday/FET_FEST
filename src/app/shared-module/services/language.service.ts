@@ -13,11 +13,18 @@ export class LanguageService {
         this.translateService.use(LANGUAGE_CODES_ENUM.english);
     }
 
+    /**
+     * Method Set Currenct Languauge
+     * param languageCode
+     */
     setLanguage(languageCode: string): void {
         this.currentLanguage = languageCode;
         this.translateService.use(languageCode);
     }
 
+    /**
+     * Method to get currenct language
+     */
     getLanguage(): string {
         return this.currentLanguage;
     }

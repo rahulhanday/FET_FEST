@@ -21,15 +21,15 @@
     "labelKey": "label_mango_alphanso",
     "type": 2,
     "marketPrice": 180,
-    "image": "../../assets/images/mango.jpg"
+    "image": "../../assets/images/mangoes.jpg"
   },
   {
     "id": "p3",
-    "label": "Onion",
-    "labelKey": "label_onion",
+    "label": "Cabbage",
+    "labelKey": "label_cabbages",
     "type": 1,
     "marketPrice": 30,
-    "image": "../../assets/images/onion.jpg"
+    "image": "../../assets/images/cabbage.jpg"
   },
   {
     "id": "p4",
@@ -37,6 +37,6 @@
     "labelKey": "label_apple",
     "type": 2,
     "marketPrice": 140,
-    "image": "../../assets/images/apple.jpg"
+    "image": "../../assets/images/apples.jpg"
   }
 ]

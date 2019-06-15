@@ -1,11 +1,17 @@
-<div class="dashboard-container">
-  <div class="btn-container">
-    <button class="btn btn-primary common-btn" [routerLink]="['feed']">{{ 'label_sell_products' | translate }}</button>
+<div class="dashboard-container main">
+  <div class="btn-container row">
+    <button class="btn col btn-primary common-btn" [routerLink]="['feed']">
+      {{ 'label_sell_products' | translate }}
+    </button>
   </div>
-  <div class="btn-container">
-    <button class="btn btn-primary common-btn" [routerLink]="['request']">{{ 'label_reuqests' | translate }}</button>
+  <div class="btn-container row">
+    <button class="btn col btn-primary common-btn" [routerLink]="['request']">
+      {{ 'label_reuqests' | translate }}
+    </button>
   </div>
-  <div class="btn-container">
-    <button class="btn btn-primary common-btn" [routerLink]="['earnings']">{{ 'label_earning' | translate }}</button>
+  <div class="btn-container row">
+    <button class="btn col  btn-primary common-btn" [routerLink]="['earnings']">
+      {{ 'label_earning' | translate }}
+    </button>
   </div>
 </div>

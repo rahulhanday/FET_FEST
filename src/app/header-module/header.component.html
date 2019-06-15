@@ -1,33 +1,43 @@
-<div class="header">
-    <div class="header-logo">
+<nav class="site-header sticky-top py-1">
+    <div class="container clearfix">
+        <div class="float-left">
+            <a class=" float-left" href="#" style="width: 60px;">
+                <img class="w-100" title="Safal Kisaan" src="assets/images/logo.png">
+            </a>
+        </div>
+        <label class="login-details-name" *ngIf="context">{{context.name}}
+        </label>
+        <div class="float-right login-details">
 
-    </div>
-    <div class="header-username" *ngIf="context">
-        {{context.name}}
-    </div>
-    <div class="header-cart" *ngIf="context && context.type === contextTypes.user">
-        {{ cartItemsCount }}
-    </div>
-    <div ngbDropdown class="d-inline-block header-language-dropdown">
-        <button class="btn btn-outline-primary" id="languageDropdown" ngbDropdownToggle>
-            <div *ngIf="languageCodes.english === currentLanguage; else hindiLanguageTemplate">
-                {{'label_english_language'| translate}}
+            <div ngbDropdown class="d-inline-block header-language-dropdown" style="    margin-top: 10px;">
+                <button class="btn btn-outline-primary languageDropdown" id="languageDropdown" ngbDropdownToggle>
+                    <div *ngIf="languageCodes.english === currentLanguage; else hindiLanguageTemplate">
+                        {{'label_english_language'| translate}}
+                    </div>
+                    <ng-template #hindiLanguageTemplate>
+                        {{'label_hindi_language' | translate}}
+                    </ng-template>
+                </button>
+                <div ngbDropdownMenu aria-labelledby="languageDropdown">
+                    <div ngbDropdownItem (click)="changeLanguage(languageCodes.english)">
+                        {{'label_english_language'| translate}}</div>
+                    <div ngbDropdownItem (click)="changeLanguage(languageCodes.hindi)">
+                        {{'label_hindi_language' | translate}}</div>
+                </div>
             </div>
-            <ng-template #hindiLanguageTemplate>
-                {{'label_hindi_language' | translate}}
-            </ng-template>
-        </button>
-        <div ngbDropdownMenu aria-labelledby="languageDropdown">
-            <div ngbDropdownItem (click)="changeLanguage(languageCodes.english)">
-                {{'label_english_language'| translate}}</div>
-            <div ngbDropdownItem (click)="changeLanguage(languageCodes.hindi)">
-                {{'label_hindi_language' | translate}}</div>
+
+            <div class="header-cart" *ngIf="context && context.type === contextTypes.user">
+                {{ cartItemsCount }}
+            </div>
+            <div class="header-actions" *ngIf="context">
+                <img src="../../assets/images/gender-neutral-user.png" (click)="isOpen = !isOpen">
+                <div *ngIf="isOpen" class="action-content">
+                    <div *ngIf="context.type === contextTypes.farmer" (click)="farmerEarning(); isOpen = false;">
+                        {{'label_earning' | translate }}</div>
+                    <div (click)="logoutUser(); isOpen = false;">{{'label_logout' | translate}}</div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="header-actions" *ngIf="context">
-        <div (click)="isOpen = !isOpen">Action</div>
-        <div *ngIf="isOpen">
-            <div (click)="logoutUser(); isOpen = false;">Logout</div>
-        </div>
-    </div>
-</div>
+
+</nav>
