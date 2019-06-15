@@ -40,3 +40,9 @@ a.footer-btn, a.footer-btn:hover, a.footer-btn:active  {
    color:$white;
 }
 
+.btn-primary.disabled, 
+.btn-primary:disabled {
+  background-color:$commom-btn-bg-hover;
+  border-color:$commom-btn-bg-hover;
+  box-shadow: 0 0 0 0 $white;
+}

@@ -7,7 +7,7 @@
       'label_select_city' | translate
     }}</label>
         <div class="col padding-left-10 dropdown">
-            <button class="btn btn-secondary col-12 dropdown-toggle" type="button" id="dropdownMenuButton"
+            <button class="btn btn-primary col-12 dropdown-toggle" type="button" id="dropdownMenuButton"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{ farmerModel | translate }}
             </button>
@@ -22,7 +22,7 @@
     <div class="form-group">
         <form #feedForm="ngForm">
             <div class="col padding-0 row form-group">
-                <div class="col-7">
+                <div class="col-12">
                     <div class="dropdown form-group">
                         <button class="btn btn-primary dropdown-toggle col-12" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -36,18 +36,20 @@
                         </div>
                     </div>
                     <div>
-                        <input type="number" placeholder="{{ 'label_quantity' | translate }}" class="form-control"
-                            [(ngModel)]="quantity" name="quantity" #quantityN="ngModel" required />
+                        <input type="number" placeholder="{{ 'label_quantity' | translate }}"
+                            class="common-inputs form-control" [(ngModel)]="quantity" name="quantity"
+                            #quantityN="ngModel" required />
                     </div>
                 </div>
-                <div class="col">
-                    <img *ngIf="vegModel.image" [src]="vegModel.image" width="133px" />
+                <div class="col-12 my-2">
+                    <img *ngIf="vegModel.image" class="rounded" [src]="vegModel.image" width="133px" />
                 </div>
             </div>
             <div class="col padding-left-10 row">
                 <div class="col">
-                    <input type="number" placeholder="{{ 'label_price_kg' | translate }}" class="form-control"
-                        [(ngModel)]="price" name="price" #priceN="ngModel" required />
+                    <input type="number" placeholder="{{ 'label_price_kg' | translate }}"
+                        class="common-inputs form-control" [(ngModel)]="price" name="price" #priceN="ngModel"
+                        required />
                 </div>
                 <div class="col">
                     <div class="market">{{ 'label_market_price' | translate }} :</div>
@@ -58,8 +60,8 @@
 
                 <div class="col float-right">
                     <button type="submit" [disabled]="!feedForm.form.valid || vegModel.id == null"
-                        class="btn col btn-primary float-right" (click)="addVegetable()">
-                        Add
+                        class="btn btn-primary common-btn col float-right " (click)="addVegetable()">
+                        {{ 'label_add' | translate }}
                     </button>
                 </div>
             </div>
@@ -92,12 +94,12 @@
     </div>
 </div>
 <div class="col form-group proceed">
-
-</div>
-
-<footer class="footer">
-    <button [routerLink]="['/farmer/confirmation']" class=" class=" d-block py-3 footer-btn""
+    <button [routerLink]="['/farmer/confirmation']" class="btn btn-primary col-12"
         [disabled]="addedVeg.length == 0 || farmerModel == 'label_select_city'">
         {{ 'label_proceed_to_sell' | translate }}
     </button>
+</div>
+
+<footer class="footer">
+    <a href="#" class="d-block  py-3 footer-btn"> Procced for sell </a>
 </footer>
