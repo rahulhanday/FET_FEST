@@ -4,7 +4,7 @@ export interface IRequests {
     date: string;
     location: string;
     status: string;
-    orderItems: Array<IOrderArray>
+    orderItems: Array<IOrderArray>;
 }
 
 export interface IOrderArray {
