@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 import { ContextService } from './services/context.service';
 import { LanguageService } from './services/language.service';
 import { HttpService } from './services/http.service';
