@@ -40,7 +40,7 @@ export class Vegetables implements IVegetables {
 }
 
 export interface IAddedItem {
-  vegetable: Vegetables;
+  vegetable: IVegetables;
   price: number;
   quantity: number;
 }

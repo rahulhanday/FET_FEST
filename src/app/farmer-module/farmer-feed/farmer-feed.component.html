@@ -1,39 +1,109 @@
-<p>
-  farmer-feed works!
-</p>
 <div>
-  <div class="col">
-    <div ngbDropdown class="d-inline-block">
-      <button
-        class="btn btn-outline-primary"
-        id="dropdownBasic1"
-        ngbDropdownToggle
-      >
-        {{ vegModel }}
-      </button>
-      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-        <ng-container *ngFor="let veg of vegetables">
-          <button (click)="selectVegetable()" ngbDropdownItem>
-            {{ veg.labelKey }}
-          </button>
-        </ng-container>
-      </div>
+  <div class="dropdown">
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Dropdown button
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
     </div>
   </div>
-  <div class="col">
-    <input
-      type="number"
-      placeholder="price"
-      class="form-control"
-      [(ngModel)]="price"
-    />
-  </div>
-  <div class="col">
-    <input
-      type="number"
-      placeholder="price"
-      class="form-control"
-      [(ngModel)]="quantity"
-    />
+  <form #feedForm="ngForm">
+    <div class="col row">
+      <div class="col">
+        <div class="dropdown">
+          <button
+            class="btn btn-primary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            {{ vegModel.labelKey | translate }}
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <ng-container *ngFor="let veg of vegetables">
+              <a (click)="selectVegetable()" class="dropdown-item">{{
+                veg.labelKey | translate
+              }}</a>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <input
+          type="number"
+          placeholder="{{ 'label_price' | translate }}"
+          class="form-control"
+          [(ngModel)]="price"
+          name="price"
+          #priceN="ngModel"
+          required
+        />
+      </div>
+      <div class="col">
+        <input
+          type="number"
+          placeholder="{{ 'label_quantity' | translate }}"
+          class="form-control"
+          [(ngModel)]="quantity"
+          name="quantity"
+          #quantityN="ngModel"
+          required
+        />
+      </div>
+      <div class="col">
+        <button
+          type="submit"
+          [disabled]="!feedForm.form.valid || vegModel.id == null"
+          class="btn btn-primary"
+          (click)="addVegetable()"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div class="col row">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">{{ 'label_vegetable' | translate }}</th>
+          <th scope="col">{{ 'label_price' | translate }}</th>
+          <th scope="col">{{ 'label_quantity' | translate }}</th>
+          <th scope="col">{{ 'label_action' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let veg of addedVeg; index as i">
+          <td>
+            <img
+              [src]="'https://upload.wikimedia.org/wikipedia/commons/'"
+              class="mr-2"
+              style="width: 20px"
+            />
+          </td>
+          <td>{{ veg.vegetable.labelKey | translate }}</td>
+          <td>{{ veg.price }}</td>
+          <td>{{ veg.quantity }}</td>
+          <td>
+            <button (click)="removeItem()" class="btn btn-primary">
+              {{ 'label_remove' | translate }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

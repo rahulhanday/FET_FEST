@@ -1,19 +1,45 @@
-import { Component, OnInit } from '@angular/core';
-import { IVegetables } from './farmer-feed.data';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  IVegetables,
+  Vegetables,
+  IAddedItem,
+  AddedItem
+} from './farmer-feed.data';
 import { FarmerFeedService } from './farmer-feed.service';
 
 @Component({
   selector: 'app-farmer-feed',
   templateUrl: './farmer-feed.component.html',
-  styleUrls: ['./farmer-feed.component.scss']
+  styleUrls: ['./farmer-feed.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class FarmerFeedComponent implements OnInit {
   vegetables: Array<IVegetables>;
   vegModel: IVegetables;
   price: number;
   quantity: number;
-  constructor(private farmerFeedService: FarmerFeedService) {}
+  addedVeg: Array<IAddedItem>;
 
+  /**
+   * Creates an instance of farmer feed component.
+   */
+  constructor(private farmerFeedService: FarmerFeedService) {
+    this.vegModel = new Vegetables(
+      null,
+      null,
+      'label_select_vegetable',
+      null,
+      null,
+      'Select Vegetable',
+      null,
+      true
+    );
+    this.addedVeg = [];
+  }
+
+  /**
+   * on init
+   */
   ngOnInit() {
     // this.farmerFeedService.getVegetables()
     this.vegetables = [
@@ -65,6 +91,9 @@ export class FarmerFeedComponent implements OnInit {
     ];
   }
 
+  /**
+   * Shows hide veg
+   */
   showHideVeg(veg: IVegetables, ident: boolean) {
     this.vegetables.map(vegetable => {
       if (vegetable.id === veg.id) {
@@ -73,7 +102,51 @@ export class FarmerFeedComponent implements OnInit {
     });
   }
 
+  /**
+   * Selects vegetable
+   */
   selectVegetable(veg: IVegetables) {
     this.vegModel = veg;
+  }
+
+  /**
+   * Resets farmer feed component
+   */
+  reset() {
+    this.price = null;
+    this.quantity = null;
+    this.vegModel = new Vegetables(
+      null,
+      null,
+      'label_select_vegetable',
+      null,
+      null,
+      'Select Vegetable',
+      null,
+      true
+    );
+  }
+
+  /**
+   * Adds vegetable
+   */
+  addVegetable() {
+    const item: IAddedItem = new AddedItem(
+      this.vegModel,
+      this.price * this.quantity,
+      this.quantity
+    );
+    this.addedVeg.push(item);
+    this.showHideVeg(this.vegModel, false);
+    this.reset();
+  }
+
+  /**
+   * Removes item
+   */
+  removeItem(index: number) {
+    const item = this.addedVeg[index].vegetable;
+    this.showHideVeg(item, true);
+    this.addedVeg.splice(index, 1);
   }
 }

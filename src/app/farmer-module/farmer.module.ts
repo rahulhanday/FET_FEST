@@ -6,6 +6,8 @@ import { FarmerConfirmationComponent } from './farmer-confirmation/farmer-confir
 import { FarmerRequestComponent } from './farmer-request/farmer-request.component';
 import { FarmerDashboardComponent } from './farmer-dashboard/farmer-dashboard.component';
 import { FarmerRouting } from './farmer.routing';
+import { TranslateModule } from '@ngx-translate/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FarmerComponent } from './farmer.component';
 
 @NgModule({
@@ -16,6 +18,12 @@ import { FarmerComponent } from './farmer.component';
     FarmerRequestComponent,
     FarmerDashboardComponent
   ],
-  imports: [CommonModule, FarmerRouting, FormsModule]
+  imports: [
+    CommonModule,
+    FarmerRouting,
+    FormsModule,
+    NgbModule,
+    TranslateModule
+  ]
 })
 export class FarmerModule {}
