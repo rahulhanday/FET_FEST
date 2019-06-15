@@ -16,4 +16,4 @@ const userRoutes = [
         component: UserSummaryComponent
     }
 ];
-export const userRouting = RouterModule.forRoot(userRoutes);
+export const userRouting = RouterModule.forChild(userRoutes);
