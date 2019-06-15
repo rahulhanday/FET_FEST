@@ -1,3 +1,32 @@
-<p>
-  farmer-request works!
-</p>
+<div class="request-container">
+  <div class="request-header">
+    <h4>{{ 'label_reuqests' | translate }}</h4>
+  </div>
+  <div class="requests-list-container">
+    <div class="order-container" *ngFor="let data of myRequests">
+      <h6 class="order-date-header">{{ data.date }} | {{ data.location }}</h6>
+      <div class="order-content">
+        <div class="order-list" *ngFor="let item of data.orderItems; let i = index">
+          {{ i+1 }}. {{ item.labelKey | translate }} x {{ item.quantity }} <span>{{item.price * item.quantity}}</span>
+        </div>
+        <hr />
+        <div class="status-button-container" [ngSwitch]="data.status">
+          <span class="status-label">{{ 'label_status' | translate }}</span>
+          <div *ngSwitchCase="0">
+            <span class="pending">{{ 'label_pending' | translate }}</span>
+            <button class="btn btn-primary status-btn"
+              (click)="handleButtonClick('accept', data)">{{ 'label_accept' | translate }}</button>
+            <button class="btn btn-primary status-btn"
+              (click)="handleButtonClick('reject', data)">{{ 'label_reject' | translate }}</button>
+          </div>
+          <div *ngSwitchCase="1">
+            <span class="accepted">{{ 'label_accepted' | translate }}</span>
+          </div>
+          <div *ngSwitchCase="2">
+            <span class="rejected">{{ 'label_rejected' | translate }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
