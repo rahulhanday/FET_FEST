@@ -1,78 +1,89 @@
-<div>
-  <div class="dropdown">
-    <button
-      class="btn btn-secondary dropdown-toggle"
-      type="button"
-      id="dropdownMenuButton"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      Dropdown button
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
+<div class="col">
+  <div class="col form-group">
+    <div class="dropdown">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        {{ farmerModel }}
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <ng-container *ngFor="let city of farmerCity?.cityToSell">
+          <a class="dropdown-item">{{ city }}</a>
+        </ng-container>
+      </div>
     </div>
   </div>
-  <form #feedForm="ngForm">
-    <div class="col row">
-      <div class="col">
-        <div class="dropdown">
-          <button
-            class="btn btn-primary dropdown-toggle"
-            type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            {{ vegModel.labelKey | translate }}
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <ng-container *ngFor="let veg of vegetables">
-              <a (click)="selectVegetable()" class="dropdown-item">{{
-                veg.labelKey | translate
-              }}</a>
-            </ng-container>
+
+  <div class="form-group">
+    <form #feedForm="ngForm">
+      <div class="col row">
+        <div class="col">
+          <div class="dropdown">
+            <button
+              class="btn btn-primary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              {{ vegModel.labelKey | translate }}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <ng-container *ngFor="let veg of vegetables">
+                <a
+                  (click)="selectVegetable(veg)"
+                  *ngIf="veg.visible"
+                  class="dropdown-item"
+                  >{{ veg.labelKey | translate }}</a
+                >
+              </ng-container>
+            </div>
           </div>
         </div>
+        <div class="col">
+          <input
+            type="number"
+            placeholder="{{ 'label_price_kg' | translate }}"
+            class="form-control"
+            [(ngModel)]="price"
+            name="price"
+            #priceN="ngModel"
+            required
+          />
+        </div>
+        <div class="col">
+          {{ 'label_market_price' | translate }} : {{ vegModel.marketPrice }}
+        </div>
+        <div class="col">
+          <input
+            type="number"
+            placeholder="{{ 'label_quantity' | translate }}"
+            class="form-control"
+            [(ngModel)]="quantity"
+            name="quantity"
+            #quantityN="ngModel"
+            required
+          />
+        </div>
+        <div class="col">
+          <button
+            type="submit"
+            [disabled]="!feedForm.form.valid || vegModel.id == null"
+            class="btn btn-primary"
+            (click)="addVegetable()"
+          >
+            Add
+          </button>
+        </div>
       </div>
-      <div class="col">
-        <input
-          type="number"
-          placeholder="{{ 'label_price' | translate }}"
-          class="form-control"
-          [(ngModel)]="price"
-          name="price"
-          #priceN="ngModel"
-          required
-        />
-      </div>
-      <div class="col">
-        <input
-          type="number"
-          placeholder="{{ 'label_quantity' | translate }}"
-          class="form-control"
-          [(ngModel)]="quantity"
-          name="quantity"
-          #quantityN="ngModel"
-          required
-        />
-      </div>
-      <div class="col">
-        <button
-          type="submit"
-          [disabled]="!feedForm.form.valid || vegModel.id == null"
-          class="btn btn-primary"
-          (click)="addVegetable()"
-        >
-          Add
-        </button>
-      </div>
-    </div>
-  </form>
+    </form>
+  </div>
 
   <div class="col row">
     <table class="table table-striped">
@@ -88,11 +99,7 @@
       <tbody>
         <tr *ngFor="let veg of addedVeg; index as i">
           <td>
-            <img
-              [src]="'https://upload.wikimedia.org/wikipedia/commons/'"
-              class="mr-2"
-              style="width: 20px"
-            />
+            <img [src]="veg.vegetable.image" width="50px" height="40px" />
           </td>
           <td>{{ veg.vegetable.labelKey | translate }}</td>
           <td>{{ veg.price }}</td>
