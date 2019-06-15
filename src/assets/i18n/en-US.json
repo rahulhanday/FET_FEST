@@ -43,5 +43,6 @@
   "label_kisaan": "Kisaan",
   "label_user": "User",
   "label_english_language": "English",
-  "label_hindi_language": "Hindi"
+  "label_hindi_language": "Hindi",
+  "user_quantity_error":"Please enter quantity"
 }
