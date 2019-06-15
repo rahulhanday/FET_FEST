@@ -1,3 +1,21 @@
 .item-row {
-    border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.user-summary {
+  padding-top: 20px;
+}
+
+.user-summary-payment {
+  bottom: 0;
+  position: fixed;
+}
+
+.place-order {
+  padding: 0;
+  border-radius: 0;
+}
+
+.padding-0 {
+  padding: 0;
 }
