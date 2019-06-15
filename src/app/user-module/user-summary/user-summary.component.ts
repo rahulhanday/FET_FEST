@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    templateUrl: './user-product.component.html'
+    templateUrl: './user-summary.component.html'
 })
 export class UserSummaryComponent {
 
