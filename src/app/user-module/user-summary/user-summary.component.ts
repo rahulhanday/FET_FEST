@@ -28,7 +28,7 @@ export class UserSummaryComponent implements OnInit {
 
     removeItem(id: string) {
         this.userCartList = this.userDataService.removeItemFromCart(id);
-        this.calculateGrandTotal()
+        this.calculateGrandTotal();
     }
 
     private calculateGrandTotal() {
