@@ -43,16 +43,4 @@
 
 
  
- .date-strip {
-    color: $white;    
-    .bg-column{
-        background-color: $date-strip-bg;
-        border-right: 1px solid $datestrip-border-right-color;  
-        &:last-child {
-            border-width: 0;
-        } 
-        &.active, &:hover, &:active{
-            background-color:  $date-strip-bg-active ;
-        }
-    }
-}
+ 

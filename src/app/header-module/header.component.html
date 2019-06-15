@@ -6,6 +6,8 @@
             </a>
         </div>
         <div class="float-right login-details">
+            <label class="login-details-name" *ngIf="context">{{context.name}}
+            </label>
             <div ngbDropdown class="d-inline-block header-language-dropdown">
                 <button class="btn btn-outline-primary languageDropdown" id="languageDropdown" ngbDropdownToggle>
                     <div *ngIf="languageCodes.english === currentLanguage; else hindiLanguageTemplate">
@@ -22,11 +24,19 @@
                         {{'label_hindi_language' | translate}}</div>
                 </div>
             </div>
-            <label class="login-details-name" *ngIf="context">{{context.name}}
-            </label>
+
+            <div class="header-cart" *ngIf="context && context.type === contextTypes.user">
+                {{ cartItemsCount }}
+            </div>
             <a class="pr-1 ml-2 login-details-icon" href="#">
                 <i class="fa fa-sign-in"></i>
             </a>
+        </div>
+    </div>
+    <div class="header-actions" *ngIf="context">
+        <div (click)="isOpen = !isOpen">Action</div>
+        <div *ngIf="isOpen">
+            <div (click)="logoutUser(); isOpen = false;">Logout</div>
         </div>
     </div>
 </nav>
