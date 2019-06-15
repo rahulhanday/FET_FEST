@@ -1,2 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+@import 'assets/scss/veriables.scss';
+
+.common-btn {
+    color:$commom-btn-bg;
+    &:hover, &:active{
+        color:$commom-btn-bg;
+    }
+}
+.common-inputs:focus {
+    background-color:$white;
+    border-color:$white;
+    box-shadow: 0 0 0 0 $white;
+}
+.site-header {
+    background-color:$header-btn-bg;
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $footer-btn-bg ;
+    color:$white;
+    text-align: center;
+ }
+ a.footer-btn, a.footer-btn:hover, a.footer-btn:active  {
+     text-decoration: none;
+     color:$white;
+ }
