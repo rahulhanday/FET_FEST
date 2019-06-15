@@ -32,7 +32,7 @@
         background-color: $white;
         color:$text-color;
         border-color: #e5e5e5;
-        width: 130px;
+        width: 110px;
         &.btn-outline-primary:not(:disabled):not(.disabled).active:focus, 
         &.btn-outline-primary:not(:disabled):not(.disabled):active:focus, 
         .show>.btn-outline-primary.dropdown-toggle:focus ,
@@ -77,4 +77,18 @@
     min-height: 60px;
     padding: 10px;
     cursor: pointer;
+}
+
+.header-cart {
+    display: inline-block;
+    margin: 1px 0 0 6px;
+    font-size: 28px;
+    position: relative;
+    .count {
+        position: absolute;
+        top: 0;
+        right: -10px;
+        font-size: 14px;
+        color:  $footer-btn-bg;
+    }
 }

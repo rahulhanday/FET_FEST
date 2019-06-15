@@ -27,7 +27,8 @@
             </div>
 
             <div class="header-cart" *ngIf="context && context.type === contextTypes.user">
-                {{ cartItemsCount }}
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                <div class="count"> {{ cartItemsCount }} </div>
             </div>
             <div class="header-actions" *ngIf="context">
                 <img src="../../assets/images/gender-neutral-user.png" (click)="isOpen = !isOpen">
