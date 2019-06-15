@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FarmerComponent } from './farmer.component';
 import { FarmerEarningsComponent } from './farmer-earnings/farmer-earnings.component';
 import { FarmerEarningService } from './farmer-earnings/farmer-earnings.service';
+import { SharedModule } from '../shared-module/shared.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FarmerEarningService } from './farmer-earnings/farmer-earnings.service'
   ],
   imports: [
     CommonModule,
+    SharedModule,
     FarmerRouting,
     FormsModule,
     NgbModule,
@@ -30,4 +32,4 @@ import { FarmerEarningService } from './farmer-earnings/farmer-earnings.service'
   ],
   providers: [FarmerEarningService]
 })
-export class FarmerModule { }
+export class FarmerModule {}

@@ -6,6 +6,7 @@ import {
   AddedItem
 } from './farmer-feed.data';
 import { FarmerFeedService } from './farmer-feed.service';
+import { IContext } from 'src/app/shared-module/shared.model';
 
 @Component({
   selector: 'app-farmer-feed',
@@ -20,6 +21,8 @@ export class FarmerFeedComponent implements OnInit {
   price: number;
   quantity: number;
   addedVeg: Array<IAddedItem>;
+  farmerCity: IContext;
+  farmerModel: string;
 
   /**
    * Creates an instance of farmer feed component.
@@ -35,6 +38,7 @@ export class FarmerFeedComponent implements OnInit {
       null,
       true
     );
+    this.farmerModel = 'label_select_city';
     this.addedVeg = [];
   }
 
@@ -46,11 +50,16 @@ export class FarmerFeedComponent implements OnInit {
       .getVegetables()
       .subscribe((data: Array<IVegetables>) => {
         this.vegetables = data;
+        this.vegetables.map(veg => {
+          veg.visible = true;
+        });
       });
+
+    this.farmerCity = this.farmerFeedService.getCity();
   }
 
   /**
-   * Shows hide veg
+   * Shows hide vegetable in dropdown
    */
   showHideVeg(veg: IVegetables, ident: boolean) {
     this.vegetables.map(vegetable => {
@@ -91,7 +100,7 @@ export class FarmerFeedComponent implements OnInit {
   addVegetable() {
     const item: IAddedItem = new AddedItem(
       this.vegModel,
-      this.price * this.quantity,
+      this.price,
       this.quantity
     );
     this.addedVeg.push(item);
