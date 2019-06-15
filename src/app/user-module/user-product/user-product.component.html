@@ -1,12 +1,12 @@
 <!-- date strip -->
 <div class="container">
-    <div>Date Strip</div>
+    <app-date-strip-component></app-date-strip-component>
     <div class="row">
         <div class="col-12">
             <input class="product-search-input common-inputs" type="" placeholder="{{'label_search'|translate}}" />
         </div>
     </div>
-    <div class="row">
+    <div class="row product-list-container">
         <div class="col">
             <div class="row product-holder" *ngFor="let product of userProductList">
                 <div class="col-4">
@@ -24,13 +24,30 @@
                     </p>
                     <p class="product-label product-quantity-holder">
                         <span class="label-entry">{{"label_quantity" | translate}}:</span>
-                        <input class="product-quantity-input" type="number" [(ngModel)]="product.quantity"  (ngModelChange)="onQuantityChange(product)"/>
+                        <input class="product-quantity-input" type="number" [(ngModel)]="product.quantity"
+                            (ngModelChange)="onQuantityChange(product)" />
                     </p>
                     <div class="btn btn-primary common-btn product-add" (click)="addProductToCart(product.id)">
                         {{"label_add"|translate}}</div>
                     <p class="product-error" *ngIf="product.error">{{"user_quantity_error"|translate}}</p>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="row product-bottom-holder">
+        <div class="col-6">
+            <div>
+                <span class="price-label">{{"label_you_save"|translate}}</span>
+                <span>₹ {{savedAmount}}</span>
+            </div>
+            <div>
+                <span class="price-label">{{"label_total"|translate}}</span>
+                <span>₹ {{totalAmount}}</span>
+            </div>
+        </div>
+        <div class="col-6 proceed-button-holder">
+            <div class="btn btn-primary proceed-btn" (click)="onProceed()">{{"label_proceed"|translate}}</div>
+            <p *ngIf="noProductError" class="proceed-error">{{"label_proceed_error"|translate}}</p>
         </div>
     </div>
 </div>

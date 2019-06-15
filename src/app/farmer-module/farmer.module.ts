@@ -9,6 +9,9 @@ import { FarmerRouting } from './farmer.routing';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FarmerComponent } from './farmer.component';
+import { FarmerEarningsComponent } from './farmer-earnings/farmer-earnings.component';
+import { FarmerEarningService } from './farmer-earnings/farmer-earnings.service';
+import { SharedModule } from '../shared-module/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,14 +19,17 @@ import { FarmerComponent } from './farmer.component';
     FarmerFeedComponent,
     FarmerConfirmationComponent,
     FarmerRequestComponent,
-    FarmerDashboardComponent
+    FarmerDashboardComponent,
+    FarmerEarningsComponent
   ],
   imports: [
     CommonModule,
+    SharedModule,
     FarmerRouting,
     FormsModule,
     NgbModule,
     TranslateModule
-  ]
+  ],
+  providers: [FarmerEarningService]
 })
 export class FarmerModule {}

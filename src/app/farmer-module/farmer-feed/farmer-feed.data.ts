@@ -45,7 +45,7 @@ export interface IAddedItem {
   quantity: number;
 }
 
-export class AddedItem implements AddedItem {
+export class AddedItem implements IAddedItem {
   vegetable: Vegetables;
   price: number;
   quantity: number;

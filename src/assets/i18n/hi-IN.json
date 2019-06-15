@@ -11,6 +11,7 @@
   "label_submit": "जमा करें",
   "label_place_order": "जमा करें",
   "label_select_vegetable": "सब्जी का चयन करें",
+  "label_select_city": "शहर चुनें",
   "label_vegetable": "सब्जी",
   "label_quantity": "मात्रा",
   "label_price_kg": "मूल्य / किग्रा",
@@ -26,6 +27,7 @@
   "label_apple": "सेब",
   "label_logout": "लोग आउट",
   "label_proceed": "आगे बढ़ें",
+  "label_proceed_to_sell": "बेचने के लिए आगे बढ़ें",
   "label_app_title": "सफल किसान",
   "label_status": "स्थिति",
   "label_summary": "सारांश",
@@ -45,8 +47,14 @@
   "label_user": "उपयोगकर्ता",
   "label_english_language": "अंग्रेज़ी",
   "label_hindi_language": "हिंदी",
+  "label_Pune": "पुणे",
+  "label_Nanded": "नांदेड़",
+  "label_Mumbai": "मुंबई",
+  "label_Nagpur": "नागपुर",
   "user_quantity_error": "कृपया मात्रा दर्ज करें",
+  "label_proceed_error": "कृपया उत्पादों को जोड़ें",
   "label_no_records": "कोई रिकॉर्ड नहीं",
   "label_payment_options": "भुगतान विकल्प",
-  "label_cod": "डिलवरी पर नकदी"
+  "label_cod": "डिलवरी पर नकदी",
+  "label_product": "उत्पाद"
 }

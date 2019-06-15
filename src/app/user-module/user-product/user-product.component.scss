@@ -1,5 +1,8 @@
 @import "../../../assets/scss/veriables.scss";
 
+.product-list-container{
+    margin-bottom: 50px;
+}
 .product-search-input{
     width: 100%;
     margin-bottom: 10px;
@@ -26,9 +29,31 @@
 .product-quantity-input{
     width: 60px;
 }
-.product-add{
-    
+.product-bottom-holder {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: white;
+}
+.proceed-btn{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+.proceed-button-holder{
+    padding: 0;
+    .proceed-error{
+        color: red;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: -16px;
+        font-size: 14px;
+    }
 }
 .product-error{
     color: red;
+}
+.price-label{
+    margin-right: 10px;
 }
