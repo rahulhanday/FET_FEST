@@ -1,12 +1,15 @@
-.date-strip-container {
-    width: 100%;
-    height: 60px;
-    display: flex;
 
-    .date-container {
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        width: 25%;
+@import '../../assets/scss/veriables.scss';
+.date-strip {
+    color: $white;    
+    .bg-column{
+        background-color: $date-strip-bg;
+        border-right: 1px solid $datestrip-border-right-color;  
+        &:last-child {
+            border-width: 0;
+        } 
+        &.active, &:hover, &:active{
+            background-color:  $date-strip-bg-active ;
+        }
     }
 }
