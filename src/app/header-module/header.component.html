@@ -1,7 +1,7 @@
 <nav class="site-header sticky-top py-1">
     <div class="container clearfix">
         <div class="float-left">
-            <a class=" float-left" href="#" style="width: 60px;">
+            <a class=" float-left" href="#" style="width: 60px;" (click)="logoutUser()">
                 <img class="w-100" title="Safal Kisaan" src="assets/images/logo.png">
             </a>
         </div>
@@ -26,7 +26,8 @@
                 </div>
             </div>
 
-            <div class="header-cart" *ngIf="context && context.type === contextTypes.user">
+            <div class="header-cart" style="display: inline-block; margin: 0 20px 0 20px;"
+                *ngIf="context && context.type === contextTypes.user">
                 {{ cartItemsCount }}
             </div>
             <div class="header-actions" *ngIf="context">
