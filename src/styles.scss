@@ -4,21 +4,27 @@
 @import 'assets/scss/veriables.scss';
 
 .common-btn {
-    color:$commom-btn-bg;
-    &:hover, &:active{
-        color:$commom-btn-bg;
+    background-color:$commom-btn-bg;
+    border-color:$commom-btn-bg;    
+    &.btn-primary:not(:disabled):not(.disabled).active, 
+    &.btn-primary:not(:disabled):not(.disabled):active,
+    &.btn-primary:hover, &.btn-primary:active{
+        background-color:$commom-btn-bg-hover;
+        border-color:$commom-btn-bg-hover;
+        box-shadow: 0 0 0 0 $white;
+    } 
+    &.btn-primary.focus, &.btn-primary:focus {
+        box-shadow: 0 0 0 0 $white;
+        background-color:$commom-btn-bg-hover;
+        border-color:$commom-btn-bg-hover;
     }
 }
-.common-inputs:focus {
-    background-color:$white;
-    border-color:$white;
+
+.common-inputs:focus, .common-inputs:active {
+    border-color:$footer-btn-bg;
     box-shadow: 0 0 0 0 $white;
 }
-.site-header {
-    background-color:$header-btn-bg;
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px);
-}
+
 
 .footer {
     position: fixed;
@@ -33,3 +39,20 @@
      text-decoration: none;
      color:$white;
  }
+
+
+
+ 
+ .date-strip {
+    color: $white;    
+    .bg-column{
+        background-color: $date-strip-bg;
+        border-right: 1px solid $datestrip-border-right-color;  
+        &:last-child {
+            border-width: 0;
+        } 
+        &.active, &:hover, &:active{
+            background-color:  $date-strip-bg-active ;
+        }
+    }
+}
