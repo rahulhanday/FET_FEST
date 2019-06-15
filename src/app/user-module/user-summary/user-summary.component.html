@@ -1,67 +1,94 @@
 <div class="user-summary">
-    <div *ngIf="!userCartList || userCartList.length === 0">
-        {{'label_no_records' | translate}}
+  <div
+    class="col text-center form-group"
+    *ngIf="!userCartList || userCartList.length === 0"
+  >
+    {{ 'label_no_records' | translate }}
+  </div>
+  <div
+    *ngIf="userCartList && userCartList.length > 0"
+    class="row form-group col user-summary-labels"
+  >
+    <div class="col-4">
+      {{ 'label_product' | translate }}
     </div>
-    <div class="row user-summary-labels">
-        <div class="col-4">
-            {{'label_product' | translate}}
-        </div>
-        <div class="col-1">
-            {{'label_quantity' | translate}}
-        </div>
-        <div class="col-3">
-            {{'label_price' | translate}}
-        </div>
-        <div class="col-2" (click)="removeItem(item.id)">
-            {{'label_remove' | translate}}
-        </div>
+    <div class="col-3">
+      {{ 'label_quantity' | translate }}
     </div>
-    <div class="row item-row" *ngFor="let item of userCartList">
-        <div class="col-4">
-            {{item.labelKey | translate}}
-        </div>
-        <div class="col-1">
-            {{item.quantity }}
-        </div>
-        <div class="col-3">
-            ₹ {{item.quantity * item.price}}
-        </div>
-        <div class="col-2" (click)="removeItem(item.id)">
-            X
-        </div>
+    <div class="col-3">
+      {{ 'label_price' | translate }}
     </div>
-    <div class="user-summary-grand-total" *ngIf="userCartList && userCartList.length">
-        <div class="row">
-            <h4 class="col-6">
-                {{'label_total' | translate}}
-            </h4>
-            <h4 class="col-6">
-                {{grandTotal}}
-            </h4>
-        </div>
+    <div class="col-2">
+      {{ 'label_remove' | translate }}
     </div>
-    <div class="user-summary-payment">
-        <div class="btn btn-primary common-btn" (click)="proceedToPay()">
-            {{'label_place_order' | translate}}
-        </div>
+  </div>
+  <div class="row item-row" *ngFor="let item of userCartList">
+    <div class="col-4">
+      {{ item.labelKey | translate }}
     </div>
-    <ng-template #paymentModal let-modal>
-        <div class="modal-header">
-            <h4 class="modal-title" id="modal-basic-title">{{'label_payment_options' | translate}}</h4>
-            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                <span aria-hidden="true">&times;</span>
-            </button>
+    <div class="col-1">
+      {{ item.quantity }}
+    </div>
+    <div class="col-3">₹ {{ item.quantity * item.price }}</div>
+    <div class="col-2" (click)="removeItem(item.id)">
+      X
+    </div>
+  </div>
+  <div
+    class="user-summary-grand-total"
+    *ngIf="userCartList && userCartList.length"
+  >
+    <div class=" col row">
+      <h4 class="col-6">
+        {{ 'label_total' | translate }}
+      </h4>
+      <h4 class="col-6">
+        {{ grandTotal }}
+      </h4>
+    </div>
+  </div>
+  <div class=" col padding-0 user-summary-payment">
+    <div
+      class="btn col place-order btn-primary common-btn"
+      (click)="proceedToPay()"
+    >
+      {{ 'label_place_order' | translate }}
+    </div>
+  </div>
+  <ng-template #paymentModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">
+        {{ 'label_payment_options' | translate }}
+      </h4>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div>
+        <div class="btn btn-primary common-btn" (click)="paymentDone()">
+          UPI
         </div>
-        <div class="modal-body">
-            <div>
-                <div class="btn btn-primary common-btn" (click)="paymentDone()">UPI</div>
-            </div>
-            <div class="mt-3">
-                <div class="btn btn-primary common-btn" (click)="paymentDone()">{{'label_cod' | translate }}</div>
-            </div>
+      </div>
+      <div class="mt-3">
+        <div class="btn btn-primary common-btn" (click)="paymentDone()">
+          {{ 'label_cod' | translate }}
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-        </div>
-    </ng-template>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-outline-dark"
+        (click)="modal.close('Save click')"
+      >
+        Save
+      </button>
+    </div>
+  </ng-template>
 </div>

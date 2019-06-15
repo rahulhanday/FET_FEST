@@ -20,7 +20,7 @@
     {
         "id": "p3",
         "label": "Cabbage",
-        "labelKey": "label_cabbage",
+        "labelKey": "label_cabbages",
         "type": 1,
         "price": 20,
         "marketPrice": 30,
