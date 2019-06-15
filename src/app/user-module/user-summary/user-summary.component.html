@@ -2,6 +2,20 @@
     <div *ngIf="!userCartList || userCartList.length === 0">
         {{'label_no_records' | translate}}
     </div>
+    <div class="row user-summary-labels">
+        <div class="col-4">
+            {{'label_product' | translate}}
+        </div>
+        <div class="col-1">
+            {{'label_quantity' | translate}}
+        </div>
+        <div class="col-3">
+            {{'label_price' | translate}}
+        </div>
+        <div class="col-2" (click)="removeItem(item.id)">
+            {{'label_remove' | translate}}
+        </div>
+    </div>
     <div class="row item-row" *ngFor="let item of userCartList">
         <div class="col-4">
             {{item.labelKey | translate}}
