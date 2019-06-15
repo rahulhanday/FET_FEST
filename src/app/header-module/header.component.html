@@ -25,6 +25,9 @@
         </div>
     </div>
     <div class="header-actions" *ngIf="context">
-
+        <div (click)="isOpen = !isOpen">Action</div>
+        <div *ngIf="isOpen">
+            <div (click)="logoutUser(); isOpen = false;">Logout</div>
+        </div>
     </div>
 </div>

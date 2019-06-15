@@ -5,6 +5,7 @@ import { ContextService } from '../shared-module/services/context.service';
 import { IContext } from '../shared-module/shared.model';
 import { SharedDataService } from '../shared-module/services/shared-data.service';
 import { CONTEXT_TYPES_ENUM } from '../app.constant';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'header-component',
@@ -20,7 +21,8 @@ export class HeaderComponent {
     contextTypes: any;
     constructor(private languageService: LanguageService,
         private contextService: ContextService,
-        private sharedDataService: SharedDataService) {
+        private sharedDataService: SharedDataService,
+        private route: Router) {
         this.currentLanguage = this.languageService.getLanguage();
         this.languageCodes = LANGUAGE_CODES_ENUM;
         this.context = this.contextService.getContext();
@@ -30,6 +32,11 @@ export class HeaderComponent {
     changeLanguage(languageCode: string) {
         this.currentLanguage = languageCode;
         this.languageService.setLanguage(this.currentLanguage);
+    }
+
+    logoutUser() {
+        this.contextService.setContext(null);
+        this.route.navigate(['home']);
     }
 
     private init() {
