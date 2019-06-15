@@ -71,6 +71,10 @@ export class HeaderComponent implements OnDestroy {
         });
     }
 
+    farmerEarning() {
+        this.route.navigate(['farmer/earnings']);
+    }
+
     /**
      * Destroy Observable on destroy
      */
