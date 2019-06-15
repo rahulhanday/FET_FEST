@@ -55,5 +55,8 @@
   "label_no_records": "No Records",
   "label_payment_options": "Payment Options",
   "label_cod": "Cash On Delivery",
-  "label_product": "Product"
+  "label_product": "Product",
+  "label_farmer_confirmation_1": "Thanks for selling. Please click ",
+  "label_here": "here",
+  "label_farmer_confirmation_2": " to start selling again"
 }
