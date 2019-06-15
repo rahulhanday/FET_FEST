@@ -1,3 +1,11 @@
-<p>
-  farmer-confirmation works!
-</p>
+<div class="row">
+  <div class="col-12 confirmation-holder">
+    <h2 class="confirmation-header">{{ 'label_confirmation' | translate }}</h2>
+    <h5>
+      {{ 'label_farmer_confirmation_1' | translate }}
+      <a href="" [routerLink]="['/farmer']"> {{ 'label_here' | translate }}</a>
+    </h5>
+    <br />
+    <h6>{{ 'label_farmer_confirmation_2' | translate }}</h6>
+  </div>
+</div>
