@@ -5,6 +5,7 @@
     background-color: $header-btn-bg;
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid #e5e5e5;
 }
  .login-details{
     &-icon {
@@ -16,9 +17,7 @@
     }
 
     &-name {
-        color:$white;
-        margin: 18px 10px 0 0px;
-        float: left;
+        margin: 16px 0 0 15px;
     }
  }
  .dropdown-toggle{
@@ -32,10 +31,8 @@
     .languageDropdown {
         background-color: $white;
         color:$text-color;
-        border-color: $footer-btn-bg;
-        border-color: #66191c;
-        width: 90px;
-        text-align: left;
+        border-color: #e5e5e5;
+        width: 130px;
         &.btn-outline-primary:not(:disabled):not(.disabled).active:focus, 
         &.btn-outline-primary:not(:disabled):not(.disabled):active:focus, 
         .show>.btn-outline-primary.dropdown-toggle:focus ,
@@ -54,8 +51,6 @@
  }
 
  .header-language-dropdown  {
-    float: left;
-    top: 13px;
     .dropdown-menu {
         padding: 0;
     }
@@ -66,3 +61,20 @@
         border-bottom: 1px solid #aba7a7;
     }
  }
+
+.header-actions {
+    display: inline-block;
+    margin: 15px 0 0 10px;
+    position: relative;
+}
+
+.action-content {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    width: 145px;
+    right: 0;
+    min-height: 60px;
+    padding: 10px;
+    cursor: pointer;
+}
