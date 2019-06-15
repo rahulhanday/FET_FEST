@@ -4,10 +4,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-import { SharedModule } from '../shared-module/shared.module';
 
 @NgModule({
-    imports: [NgbModule, CommonModule, FormsModule, TranslateModule, SharedModule],
+    imports: [NgbModule, CommonModule, FormsModule, TranslateModule],
     declarations: [HeaderComponent],
     exports: [HeaderComponent]
 })

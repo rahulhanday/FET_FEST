@@ -25,7 +25,7 @@ export class HomeService {
                     'cityToSell': data.cityToSell
                 });
             })
-        )
+        );
     }
 
     private getUserDetails(): Observable<void> {
@@ -38,6 +38,6 @@ export class HomeService {
                     'city': data.city
                 });
             })
-        )
+        );
     }
 }
