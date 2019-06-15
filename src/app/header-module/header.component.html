@@ -26,9 +26,9 @@
                 </div>
             </div>
 
-            <div class="header-cart" style="display: inline-block; margin: 0 20px 0 20px;"
-                *ngIf="context && context.type === contextTypes.user">
-                {{ cartItemsCount }}
+            <div class="header-cart" *ngIf="context && context.type === contextTypes.user">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                <div class="count"> {{ cartItemsCount }} </div>
             </div>
             <div class="header-actions" *ngIf="context">
                 <img src="../../assets/images/gender-neutral-user.png" (click)="isOpen = !isOpen">
