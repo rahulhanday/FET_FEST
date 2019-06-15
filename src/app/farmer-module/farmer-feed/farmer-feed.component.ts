@@ -22,7 +22,7 @@ export class FarmerFeedComponent implements OnInit {
   quantity: number;
   addedVeg: Array<IAddedItem>;
   farmerCity: IContext;
-  farmerModel;
+  farmerModel: string;
 
   /**
    * Creates an instance of farmer feed component.
@@ -59,7 +59,7 @@ export class FarmerFeedComponent implements OnInit {
   }
 
   /**
-   * Shows hide veg
+   * Shows hide vegetable in dropdown
    */
   showHideVeg(veg: IVegetables, ident: boolean) {
     this.vegetables.map(vegetable => {
