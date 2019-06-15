@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Chart } from 'chart.js'
+import { Chart } from 'chart.js';
 import { FarmerEarningService } from './farmer-earnings.service';
 import { Subscription } from 'rxjs';
 @Component({
@@ -16,7 +16,7 @@ export class FarmerEarningsComponent implements OnInit, OnDestroy {
                     this.subscription$.unsubscribe();
                 }
                 const ctx = (<HTMLCanvasElement>document.getElementById('canvas')).getContext('2d');
-                new Chart(ctx, {
+                const chart = new Chart(ctx, {
                     type: 'horizontalBar',
                     data: earnings,
                 });
