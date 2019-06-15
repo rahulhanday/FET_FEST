@@ -14,6 +14,9 @@ export class HomeService {
         return CONTEXT_TYPES_ENUM.farmer === type ? this.getFarmerDetails() : this.getUserDetails();
     }
 
+    /**
+     * Get Farmer Details
+     */
     private getFarmerDetails(): Observable<void> {
         return this.httpService.get('admin.json').pipe(
             map((data: IFarmerModel) => {
@@ -28,6 +31,9 @@ export class HomeService {
         );
     }
 
+    /**
+     * Get User Details
+     */
     private getUserDetails(): Observable<void> {
         return this.httpService.get('user.json').pipe(
             map((data: IUserModel) => {
