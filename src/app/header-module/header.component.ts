@@ -25,10 +25,10 @@ export class HeaderComponent implements OnDestroy {
 
     /**
      * Initialize Variables
-     * param languageService 
-     * param contextService 
-     * param sharedDataService 
-     * param route 
+     * param languageService
+     * param contextService
+     * param sharedDataService
+     * param route
      */
     constructor(private languageService: LanguageService,
         private contextService: ContextService,
