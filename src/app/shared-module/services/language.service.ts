@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LANGUAGE_CODES_ENUM } from '../shared.constant';
 
-@Injectable()
+@Injectable({
+    'providedIn': 'root'
+})
 export class LanguageService {
     private currentLanguage: string;
     constructor(private translateService: TranslateService) {
