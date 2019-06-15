@@ -3,11 +3,18 @@
         <div class="col">
             <div ngbDropdown class="d-inline-block">
                 <button class="btn btn-outline-primary" id="languageDropdown" ngbDropdownToggle>
-                    {{'label_select_language'| translate}}
+                    <div *ngIf="languageCodes.english === currentLanguage; else hindiLanguageTemplate">
+                        {{'label_english_language'| translate}}
+                    </div>
+                    <ng-template #hindiLanguageTemplate>
+                        {{'label_hindi_language' | translate}}
+                    </ng-template>
                 </button>
                 <div ngbDropdownMenu aria-labelledby="languageDropdown">
-                    <button ngbDropdownItem>{{'label_english_language'| translate}}</button>
-                    <button ngbDropdownItem>{{'label_hindi_language' | translate}}</button>
+                    <div ngbDropdownItem (click)="changeLanguage(languageCodes.english)">
+                        {{'label_english_language'| translate}}</div>
+                    <div ngbDropdownItem (click)="changeLanguage(languageCodes.hindi)">
+                        {{'label_hindi_language' | translate}}</div>
                 </div>
             </div>
         </div>

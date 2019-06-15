@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { LanguageService } from '../shared-module/services/language.service';
+import { LANGUAGE_CODES_ENUM } from '../shared-module/shared.constant';
 
 @Component({
     selector: 'header-component',
@@ -8,5 +9,14 @@ import { LanguageService } from '../shared-module/services/language.service';
     encapsulation: ViewEncapsulation.None
 })
 export class HeaderComponent {
-    constructor(private languageService: LanguageService) { }
+    currentLanguage: string;
+    languageCodes: any;
+    constructor(private languageService: LanguageService) {
+        this.currentLanguage = this.languageService.getLanguage();
+        this.languageCodes = LANGUAGE_CODES_ENUM;
+    }
+    changeLanguage(languageCode: string) {
+        this.currentLanguage = languageCode;
+        this.languageService.setLanguage(this.currentLanguage);
+    }
 }
