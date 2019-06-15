@@ -45,5 +45,8 @@
   "label_english_language": "English",
   "label_hindi_language": "Hindi",
   "user_quantity_error":"Please enter quantity",
-  "label_proceed_error":"Please add products"
+  "label_proceed_error":"Please add products",
+  "label_no_records": "No Records",
+  "label_payment_options": "Payment Options",
+  "label_cod": "Cash On Delivery"
 }
