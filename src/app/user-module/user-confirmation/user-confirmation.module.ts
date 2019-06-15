@@ -6,7 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
     declarations: [
         UserConfirmationComponent
     ],
-    imports:[
+    imports: [
         TranslateModule
     ]
 })
