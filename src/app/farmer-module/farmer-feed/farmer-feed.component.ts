@@ -64,4 +64,16 @@ export class FarmerFeedComponent implements OnInit {
       }
     ];
   }
+
+  showHideVeg(veg: IVegetables, ident: boolean) {
+    this.vegetables.map(vegetable => {
+      if (vegetable.id === veg.id) {
+        vegetable.visible = ident;
+      }
+    });
+  }
+
+  selectVegetable(veg: IVegetables) {
+    this.vegModel = veg;
+  }
 }
