@@ -6,10 +6,10 @@ import { Router } from '@angular/router';
     styleUrls: ['./user-confirmation.component.scss']
 })
 export class UserConfirmationComponent {
-    constructor(private router:Router){
+    constructor(private router: Router) {
 
     }
-    goToProduct(){
+    goToProduct() {
         this.router.navigate(['user/product']);
     }
 }
