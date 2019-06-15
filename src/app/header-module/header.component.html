@@ -5,6 +5,9 @@
     <div class="header-username" *ngIf="context">
         {{context.name}}
     </div>
+    <div class="header-cart" *ngIf="context && context.type === contextTypes.user">
+        {{ cartItemsCount }}
+    </div>
     <div ngbDropdown class="d-inline-block header-language-dropdown">
         <button class="btn btn-outline-primary" id="languageDropdown" ngbDropdownToggle>
             <div *ngIf="languageCodes.english === currentLanguage; else hindiLanguageTemplate">
@@ -22,6 +25,9 @@
         </div>
     </div>
     <div class="header-actions" *ngIf="context">
-
+        <div (click)="isOpen = !isOpen">Action</div>
+        <div *ngIf="isOpen">
+            <div (click)="logoutUser(); isOpen = false;">Logout</div>
+        </div>
     </div>
 </div>
